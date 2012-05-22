@@ -1,0 +1,2 @@
+git-mediawiki-ensimag
+=====================
