@@ -1,5 +1,10 @@
 #!/usr/bin/perl
 
+#wiki_delete_page <wiki_url> <page_name> <login> <passwd>
+#delete the page <page_name> from the wiki with the url <wiki_url>.
+#using the session : <login> + <passwd>
+#by default behavior : wiki_delete page http://darktrop.fr.cr/wiki/api.php Petit_essai Ensimag-git bouteilledu38
+
 use MediaWiki::API;
 
 my $wikiurl = $ARGV[0];
