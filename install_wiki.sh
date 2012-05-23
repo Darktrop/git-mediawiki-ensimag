@@ -17,6 +17,9 @@ DB_SU_PASSW="root"      # Password of the superuser in the database
 cmd_install()
 {
         cp -R "$WIKI_INST_DIR" "$WIKI_DIR_INST/$WIKI_DIR_NAME"
+        if [ -f "$WIKI_DIR_INST/$WIKI_DIR_NAME/LocalSettings.php" ]; then
+                rm "$WIKI_DIR_INST/$WIKI_DIR_NAME/LocalSettings.php"
+        fi
         chmod -R ugo+rw "$WIKI_DIR_INST/$WIKI_DIR_NAME"
         chmod +x "$WIKI_DIR_INST/$WIKI_DIR_NAME/config/"
 
