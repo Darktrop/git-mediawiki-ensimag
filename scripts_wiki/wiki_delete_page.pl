@@ -29,8 +29,15 @@ my $mw = MediaWiki::API->new({api_url => $wikiurl});
 #connecting...
 $mw->login({lgname => $login, lgpassword => $passwd });
 
-$mw->edit({
-	action => 'delete',
-	title => $pagename})
-|| die $mw->{error}->{code} . ": " . $mw->{error}->{details};
+my $exist=$mw->get_page({title => $pagename});
+
+if (defined($exist->{'*'})){
+	$mw->edit({
+		action => 'delete',
+		title => $pagename})
+	|| die $mw->{error}->{code} . ": " . $mw->{error}->{details};
+}else{
+	print("no page with such name found\n");
+}
+
 
