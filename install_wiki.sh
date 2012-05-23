@@ -25,11 +25,15 @@ cmd_install()
         # If LocalSettings.php exists, we should delete it so that the user
         # we will asked to enter the configuration settings later.
         cp -R "$WIKI_INST_DIR" "$WIKI_DIR_INST/$WIKI_DIR_NAME"
+        if [ "$?" -eq "1" ] ; then exit 1; fi
         if [ -f "$WIKI_DIR_INST/$WIKI_DIR_NAME/LocalSettings.php" ]; then
                 rm "$WIKI_DIR_INST/$WIKI_DIR_NAME/LocalSettings.php"
+                if [ "$?" -eq "1" ] ; then exit 1; fi
         fi
         chmod -R ugo+rw "$WIKI_DIR_INST/$WIKI_DIR_NAME"
+        if [ "$?" -eq "1" ] ; then exit 1; fi
         chmod +x "$WIKI_DIR_INST/$WIKI_DIR_NAME/config/"
+        if [ "$?" -eq "1" ] ; then exit 1; fi
 
         # Ask the user to enter the configuration settings file until
         # this one is in the wiki's directory
@@ -47,6 +51,7 @@ cmd_install()
                         # need to wait because the user prompt a key by mistake.
                         if [ -f "$WIKI_DIR_INST/$WIKI_DIR_NAME/config/LocalSettings.php" ] ; then
                                 cp "$WIKI_DIR_INST/$WIKI_DIR_NAME/config/LocalSettings.php" "$WIKI_DIR_INST/$WIKI_DIR_NAME"
+                                if [ "$?" -eq "1" ] ; then exit 1; fi
                                 is_not_set=0
                         else
                                 echo "$WIKI_DIR_INST/$WIKI_DIR_NAME/config/LocalSettings.php does not exist. You should wait that the form is sent."
