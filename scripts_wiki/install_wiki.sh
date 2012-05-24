@@ -13,12 +13,20 @@ WIKI_DIR_INST="/var/www"                # Directory of the web server
 WIKI_INST_DIR="/var/lib/mediawiki/"     # Directory of mediawiki installation
 DB_NAME="wikidb"        # Name of the database
 DB_SU_LOGIN="root"      # Login of the superuser in the database
-DB_SU_PASSW="root"      # Password of the superuser in the database
-
+DB_SU_PASSW="password"      # Password of the superuser in the database
+DB_ADDRESS="localhost"
+DB_PORT="5432"
 #
 # Function cmd_install()
 # Install a wiki in your web server directory.
 #
+wiki_config()
+{
+wget -q --post-data "Sitename=TEST&EmergencyContact=webmaster%40localhost&LanguageCode=en&License=none&SysopName=user&SysopPass=password&SysopPass2=password&Shm=none&MCServers=&Email=email_enabled&Emailuser=emailuser_enabled&Enotif=enotif_allpages&Eauthent=eauthent_enabled&DBtype=mysql&DBserver=$DB_ADDRESS&DBname=$DB_NAME&DBuser=wikiuser&DBpassword=wikipass&DBpassword2=wikipass&useroot=on&RootUser=$DB_SU_LOGIN&RootPW=$DB_SU_PASSW&DBprefix=&DBengine=InnoDB&DBschema=mysql5-binary&DBport=$DB_PORT&DBmwschema=mediawiki&DBts2schema=public&SQLiteDataDir=&DBprefix2=&DBport_db2=50000&DBmwschema=mediawiki&DBcataloged=cataloged" http://localhost/wiki/config/index.php
+}
+
+
+
 cmd_install()
 {
         # Copy the files of a wiki in the web server's directory.
@@ -39,8 +47,9 @@ cmd_install()
         # this one is in the wiki's directory
         is_not_set=1
         while [ "$is_not_set" -eq "1" ] ; do
-                read -p "Please, open http://localhost/$WIKI_DIR_NAME/config/index.php and set your configuration then send the form. Prompt any key when the form has been sent." yn
-
+                
+		wiki_config
+		
                 # The user might have already moved the wiki configuration settings
                 # file in the wiki's folder. If not we must do it.
                 if [ -f "$WIKI_DIR_INST/$WIKI_DIR_NAME/LocalSettings.php" ] ; then
