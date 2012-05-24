@@ -7,7 +7,7 @@
 
 result=$(diff $1 $2)
 
-if  echo $result | grep -q *; then
+if echo $result | grep -q ">" ; then
 	echo "test failed : file $1 and $2 do not match"
 	exit 1;
 fi
