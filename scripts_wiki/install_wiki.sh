@@ -35,8 +35,8 @@ grep_change_file() {
         replace="$3"
         file="$4"
         file_tmp="${file}.tmp"
-        
-        nline=`grep -n "^\$${param}" ${file} | cut -d ':' -f 1`
+       
+        nline=`grep -n "^\\\$$param" "$file" | cut -d ':' -f 1`
         sed "${nline}s,${value},${replace}," "$file" > "$file_tmp"
         cp "$file_tmp" "$file"
         rm "$file_tmp"
@@ -60,7 +60,7 @@ cmd_install()
                 fail "Unable to copy LocalSettings.php to LocalSettings-tmp.php"
         grep_change_file "wgScriptPath" "wiki" "$WIKI_DIR_NAME" "LocalSettings-tmp.php"
         grep_change_file "wgServer" "localhost" "$SERVER_ADDR" "LocalSettings-tmp.php"
-        grep_change_file "wgSQLiteDataDir" '/tmp' "$TMP" "LocalSettings-tmp.php"
+        grep_change_file "wgSQLiteDataDir" "/tmp" "$TMP" "LocalSettings-tmp.php"
         mkdir "$WIKI_DIR_INST/$WIKI_DIR_NAME"
         if [ ! -d "$WIKI_DIR_INST/$WIKI_DIR_NAME" ] ; then
                 fail "Folder $WIKI_DIR_INST/$WIKI_DIR_NAME don't exist. Please create it
@@ -101,7 +101,7 @@ cmd_reset() {
                 fail "Can't find $DB_FILE in the current folder.
                 Please run the script inside its folder."
         fi
-        cp "$DB_FILE" "$TMP" || fail "Can't copy wikidb.sqlite in $TMP"
+        cp "$DB_FILE" "$TMP" || fail "Can't copy $DB_FILE in $TMP"
         chmod ugo+rw "$TMP/$DB_FILE" || fail "Can't add write perms on $TMP/$DB_FILE"
         echo "File $DB_FILE is set in $TMP"
 }
