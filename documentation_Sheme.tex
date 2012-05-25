@@ -139,41 +139,35 @@
 \date{Le \today}
 \begin{document}
 
-Description du projet
-Git. Wiki. Open source, logiciel libre. Tout le monde peut apporter sa contribution. Passerelle développé l'année dernière(Definition code de base):  éditer un wiki dans navigateur web -> image miroir sous forme de fichiers et répertoires afin de profiter des                fonctionnalités de Git (explicité). Avantages.
+\section*{Description du projet et contexte}
+Habituellement les pages web d'un wiki se modifient directement sur un navigateur web à l'instar de \textit{Wikipédia}. L'année dernière une équipe d'élèves de l'école a développé \textit{Git-Mediawiki} à l'initiative de Matthieu Moy. Cet outil permet de modifier les pages d'un wiki sous forme de fichiers et de répertoires gérés par le logiciel \textit{open source} de gestion de version \textit{Git}. Ainsi nous profitons des (divines) fonctionnalités d'un tel gestionnaire comme la possibilité d'avoir plusieurs versions d'un wiki à un instant donné.\\
+Avant de voir \textit{Git-Mediawiki} ajouté à la version officielle de \textit{Git}, la communauté doit s'assurer de la qualité du code développé et de l'absence de bug. Il y a plusieurs étapes : tout d'abord, un code intéressant sera ajouté à la branche \textit{pu} et de nombreuses critiques sont émises ; une fois les critiques prises en compte et le code corrigé, celui-ci est ajouté à la branche \textit{next} ; à partir de là, c'est en bonne voie pour que le mainteneur décide de l'ajouter à la branche \textit{master} (version officielle de \textit{Git}), souvent plusieurs mois après, le temps que le code "mûrisse". Aujourd'hui, le code de \textit{Git-Mediawiki} est dans le répertoire contrib/ de la branche \textit{master}. \\
+Notre équipe développe un environnement de test pour \textit{Git-Mediawiki} afin que la communauté 
+(TODO)
+Cette année, notre équipe développe un environnement de test 
 Notre équipe: environnement de test. Pourquoi ? Validation par la communauté du code de l'année dernière afin qu'il soit     intégré à la version "officielle" du logiciel Git.
 Autre équipe en parallèle qui fonctionnalités (equipe fonctionnalité).
 Methode agile. Interraction communauté. Progression des branches de git.
 !!!!!! On chie agile !!!!
 
-Objectifs et périmètre
+
+Périmètre. Concerne les manipulations usuelles sur un wiki: ajout, édition, suppression d'une page et vérification de la     cohérence avec le repository git équivalent. (environnement)
+test automatique pour passerelle (tests)
+Tester le code de base. Technos utilisées : Perl + Shell.
+Perimètre étendu : debug du code de base + aider l'équipe fonctionnalité.
+		
+\section*{Objectifs et périmètre}
 3 objectifs:
 *) Acceptation de notre environnement par la communauté. Critère : notre code sur 'branche next'
 *) Couverture de test pour le code de l'année dernière. Critère : nombre de fonctionnalités testées et validées par la       communauté Git.
 *) Mise en forme de nos tests et respect des normes de la communauté : nombre de d'insultes ...
 +indicateurs de perf pour ces objectif
 
-Périmètre. Concerne les manipulations usuelles sur un wiki: ajout, édition, suppression d'une page et vérification de la     cohérence avec le repository git équivalent. (environnement)
-test automatique pour passerelle (tests)
-Tester le code de base. Technos utilisées : Perl + Shell.
-Perimètre étendu : debug du code de base + aider l'équipe fonctionnalité.
+(périmètre : Simon)
 
-Organistation de l'équipe et Plannification.
-	Dates = les sprints.
-	Preciser qu'on est en agile.
-	Interlocuteur = Charles (equipe fonctionnalité).
-	Reunion + reporting (cf notes).
-	Organisation Scrum : Tableau des User Stories+Avancement+burndown.
-	Communication : Avec M.Moy + Avec Communauté git (feedback).
-	
-	Prevention de risques et dépendances:
-		-Manque d'interet du projet par la communauté. S => envoyer vite et 		etre actif.
-		-Envoyer les travaux trop tard. S => bien s'organiser : envoi à 			chaque fin de sprint.
-		-L'autre équipe depend de nous. S => choix d'un interlocuteur, 				developper l'environnement rapidement
-	
-BLA BLA de la fin (pipoooooooooooo)
+\section*{Organistation de l'équipe et plannification}
+(Simon)
 
+\section*{Conclusion}
 	
-\section{Contexte du projet}
-Dans ce projet, 
 \end{document}
