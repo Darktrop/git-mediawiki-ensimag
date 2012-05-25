@@ -5,8 +5,8 @@
 #Exit with error code 1 if and only if the content of
 #<page_name> and <file> do not match.
 
-export PATH=$PATH:$HOME/git-mediawiki-ensimag/scripts_wiki
-export PATH=$PATH:$HOME/git-mediawiki-ensimag/scripts_git
+#export PATH=$PATH:$HOME/git-mediawiki-ensimag/scripts_wiki
+#export PATH=$PATH:$HOME/git-mediawiki-ensimag/scripts_git
 
 rm -rf ./tmp_test
 mkdir ./tmp_test
