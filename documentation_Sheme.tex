@@ -126,7 +126,7 @@
 \cfoot{}
 \rfoot{\footnotesize\sf page~\thepage/\pageref{LastPage}}
 \lhead{\footnotesize\sf Projet GL}
-\rhead{\footnotesize\sf ENSIMAG-2A GL10} % numéro d'équipe Teide 
+\rhead{\footnotesize\sf ENSIMAG-2A} % numéro d'équipe Teide 
 
 % titre, auteur et date
 \title{Documentation technique du compilateur DecaC\\
@@ -173,7 +173,30 @@ Organistation de l'équipe et Plannification.
 	
 BLA BLA de la fin (pipoooooooooooo)
 
-	
-\section{Contexte du projet}
-Dans ce projet, 
+\maketitle
+
+\section{Objectifs et périmètre}
+\subsection{Objectifs}
+Nous avons découpé notre projet en trois objectifs classé dans l'ordre suivant.
+\begin{enumerate}
+\item Acceptation de notre environnement de tests par la communauté git. Plus précisément, nous souhaitons que cette base de test soit sur la branche Next. Un développement accepté sur la branche PU, sera considéré comme un objectif atteint à 50\%
+\item Fournir à la communauté une couverture de test complètement du code de base. Le principal critère de réussite est la couverture du code.
+\item Nos tests doivent être conforme aux standards de la base de test de Git.
+\end{enumerate}
+Pour juger l'avancement de ces objectifs, nous prennons comme référence les avis de la communauté de développement de Git.\\
+\subsection{Périmètre}
+\subsubsection{l'environnement}
+L'environnement de test que nous allons mettre en place consiste essentiellement en des fonctions de manipulation de wiki. Nous avons également mis en place des fonctions de tests de contenu et de présence de fichiers. Ces fonctions sont utilisées pour faciliter la vérification de la cohérence entre un wiki de test et une archive git.
+\begin{enumerate}
+\item Ajout/édition d'une page
+\item Suppression d'une page
+\item Récupération d'une page
+\item Comparaison de deux fichiers
+\item Recherche d'un fichier par son nom
+\end{enumerate}
+\subsubsection{Les tests}
+
+
+
+
 \end{document}
