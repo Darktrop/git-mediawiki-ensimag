@@ -102,7 +102,6 @@ cmd_reset() {
                 Please run the script inside its folder."
         fi
         cp "$DB_FILE" "$TMP" || fail "Can't copy $DB_FILE in $TMP"
-        chmod ugo+rw "$TMP/$DB_FILE" || fail "Can't add write perms on $TMP/$DB_FILE"
         echo "File $DB_FILE is set in $TMP"
 }
 
