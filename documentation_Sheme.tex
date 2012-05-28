@@ -141,49 +141,32 @@ Passerelle Git-MediaWiki\\
 \begin{document}
 \maketitle
 
-\section*{Description du projet et contexte}
+\section{Description du projet et contexte}
+\subsection{La bonne idée de \textit{Git-MediaWiki}}
 Habituellement les pages web d'un wiki se modifient directement sur un navigateur web à l'instar de \textit{Wikipédia}. L'année dernière une équipe d'élèves de l'école a développé \textit{Git-Mediawiki} à l'initiative de Matthieu Moy. Cet outil permet de modifier les pages d'un wiki sous forme de fichiers et de répertoires gérés par le logiciel \textit{open source} de gestion de version \textit{Git}. Ainsi nous profitons des (divines) fonctionnalités d'un tel gestionnaire comme la possibilité d'avoir plusieurs versions d'un wiki à un instant donné.\\
-Avant de voir \textit{Git-Mediawiki} ajouté à la version officielle de \textit{Git}, la communauté doit s'assurer de la qualité du code développé et de l'absence de bug. Il y a plusieurs étapes : tout d'abord, un code intéressant sera ajouté à la branche \textit{pu} et de nombreuses critiques sont émises ; une fois les critiques prises en compte et le code corrigé, celui-ci est ajouté à la branche \textit{next} ; à partir de là, c'est en bonne voie pour que le mainteneur décide de l'ajouter à la branche \textit{master} (version officielle de \textit{Git}), souvent plusieurs mois après, le temps que le code "mûrisse". Aujourd'hui, le code de \textit{Git-Mediawiki} est dans le répertoire contrib/ de la branche \textit{master}. \\
-Notre équipe développe un environnement de test pour \textit{Git-Mediawiki} afin que la communauté 
-(TODO)
-Cette année, notre équipe développe un environnement de test 
-Notre équipe: environnement de test. Pourquoi ? Validation par la communauté du code de l'année dernière afin qu'il soit     intégré à la version "officielle" du logiciel Git.
-Autre équipe en parallèle qui fonctionnalités (equipe fonctionnalité).
-Methode agile. Interraction communauté. Progression des branches de git.
-!!!!!! On chie agile !!!!
-
-
-Périmètre. Concerne les manipulations usuelles sur un wiki: ajout, édition, suppression d'une page et vérification de la     cohérence avec le repository git équivalent. (environnement)
-test automatique pour passerelle (tests)
-Tester le code de base. Technos utilisées : Perl + Shell.
-Perimètre étendu : debug du code de base + aider l'équipe fonctionnalité.
-		
-\section*{Objectifs et périmètre}
-3 objectifs:
-*) Acceptation de notre environnement par la communauté. Critère : notre code sur 'branche next'
-*) Couverture de test pour le code de l'année dernière. Critère : nombre de fonctionnalités testées et validées par la       communauté Git.
-*) Mise en forme de nos tests et respect des normes de la communauté : nombre de d'insultes ...
-+indicateurs de perf pour ces objectif
-
-(périmètre : Simon)
-
-\section*{Organistation de l'équipe et plannification}
-(Simon)
-
-
+\subsection{La validation d'un projet dans la communauté \textit{Git}}
+Avant de voir \textit{Git-Mediawiki} ajouté à la version officielle de \textit{Git}, la communauté doit s'assurer de la qualité du code développé et de l'absence de bug. Il y a plusieurs étapes : tout d'abord, un code intéressant sera ajouté à la branche \textit{pu} et de nombreuses critiques sont émises ; une fois les critiques prises en compte et le code corrigé, celui-ci est ajouté à la branche \textit{next} ; à partir de là, c'est en bonne voie pour que le mainteneur décide de l'ajouter à la branche \textit{master} (version officielle de \textit{Git}), souvent plusieurs mois après, le temps que le code "mûrisse". Aujourd'hui, le code de \textit{Git-Mediawiki} est dans le répertoire contrib/ de la branche \textit{master}.\\
+\subsection{Notre projet : développer l'environnement de test}
+Cette année, notre équipe développe un environnement de test pour \textit{Git-Mediawiki}. Il y a deux raisons à cela.
+\begin{enumerate}
+\item Lors de développement informatique sérieux, tester le logiciel est au moins aussi long que le développer. Ça permet de s'assurer qu'on ne remet pas "une bombe" entre les mains de l'utilisateur. Notre base de test permettra à la communauté \textit{Git} de s'assurer que \textit{Git-MediaWiki} est un logiciel fiable ou, cas échéant, savoir que corriger pour qu'il le devienne. À terme, il serait bon que celui-ci soit intégré à la version officielle de \textit{Git}.
+\item Les développeurs qui se chargent d'ajouter des fonctionnalités pourront développer en \textit{Test Driven Development}. Une méthode agile qui produit un code plus fiable et plus rapidement qu'avec les méthodes de développements classiques.
+\end{enumerate}
+Notre travail implique donc des interactions avec la communauté mais aussi avec l'autre équipe qui travaille sur \textit{Git-Mediawiki}, chargée d'ajouter des fonctionnalités à l'existant. Toutes deux, nous utilisons les méthodes agiles. Cela sera présenté en détails dans une autre section de ce document.
 
 \section{Objectifs et périmètre}
 \subsection{Objectifs}
-Nous avons découpé notre projet en trois objectifs classé dans l'ordre suivant.
+Nous avons découpé notre projet en trois objectifs réalisables et mesurables grâce à aux critères de performance que nous détaillons également.
 \begin{enumerate}
-\item Acceptation de notre environnement de tests par la communauté git. Plus précisément, nous souhaitons que cette base de test soit sur la branche Next. Un développement accepté sur la branche PU, sera considéré comme un objectif atteint à 50\%
-\item Fournir à la communauté une couverture de test complètement du code de base. Le principal critère de réussite est la couverture du code.
-\item Nos tests doivent être conforme aux standards de la base de test de Git.
+\item \textbf{Acceptation de notre environnement de tests par la communauté \textit{Git}}. Nous souhaitons que notre base de test soit sur la branche \textit{next} (cf. ce qui est expliqué dans le contexte du projet). Un développement accepté sur la branche \textit{pu}, sera considéré comme un objectif atteint à 50\%
+\item \textbf{Couverture complète du code de base de \textit{Git-MediaWiki}}. Le critère de performance de ce point est simplement le nombre de fonctionnalités qui sont testées et approuvées de façon satisfaisante.
+\item \textbf{Conformité de nos tests avec les standards des tests \textit{Git}}. En effet, la communauté Git a adopté des standards pour l'écriture des tests du logiciel. Il nous faudra nous y conformer. La mesure de ce critère est moins objective, nous considérerons les retours de la communauté par rapport à la conformité.
 \end{enumerate}
-Pour juger l'avancement de ces objectifs, nous prenons comme référence les avis de la communauté de développement de Git.\\
+Dans tous les cas, la meilleur référence pour juger de l'avancement de nos objectifs seront les avis de la communauté qui développe \textit{Git} car ils sont des développeurs expérimentés.\\
+
 \subsection{Périmètre}
-\subsubsection{l'environnement}
-L'environnement de test que nous allons mettre en place consiste essentiellement en des fonctions de manipulation de wiki. Nous avons également mis en place des fonctions de tests de contenu et de présence de fichiers. Ces fonctions sont utilisées pour faciliter la vérification de la cohérence entre un wiki de test et une archive git.
+\subsubsection{L'environnement}
+L'environnement de test que nous allons mettre en place consiste essentiellement en des fonctions de manipulation de wiki. Nous avons également mis en place des fonctions de tests de contenu et de présence de fichiers. Ces fonctions sont utilisées pour faciliter la vérification de la cohérence entre un wiki de test et une archive \textit{Git}.
 \begin{enumerate}
 \item Ajout/édition d'une page
 \item Suppression d'une page
@@ -192,13 +175,13 @@ L'environnement de test que nous allons mettre en place consiste essentiellement
 \item Recherche d'un fichier par son nom
 \end{enumerate}
 \subsubsection{Les tests}
-Les tests que nous allons écrire serviront dans un premier temps à valider le code déjà écrit. C'est à dire les fonctionnalités basiques de la passerelle comme le clone, le push, et le pull.
+Les tests que nous allons écrire serviront dans un premier temps à valider le code déjà écrit. C'est à dire les fonctionnalités basiques de la passerelle comme le \textit{clone} (transformer un wiki en un dossier \textit{Git}), le \textit{push} (transformer les fichiers du dossier \textit{Git} comme pages du wiki), et le \textit{pull} (transformer les pages du wiki en fichiers \textit{Git}).
 
-Une fois que ces fonctionnalités seront validées, nous planifions d'écrire des tests pour l'autre équipe de développement de la passerelle. Ce point est à la frontière du périmètre, c'est à dire que nous le réaliserons seulement si le projet peut être terminé dans les délais. Toutefois, si nous arrivons à ce stade, nous envisageons de corriger les bugs existant dans le code que nous parviendrons à détecter avec l'environnement de tests.
+Une fois que ces fonctionnalités seront validées, nous planifions d'écrire des tests pour l'autre équipe de développement de la passerelle. Ce point est à la frontière du périmètre, c'est à dire que nous le réaliserons seulement si nos objectifs sont terminés dans les délais. Toutefois, si nous arrivons à ce stade, nous envisageons de corriger les bugs du code existant que nous parviendrons à détecter avec l'environnement de test. Il nous sera également possible de prêter main forte à l'équipe qui développe de nouvelles fonctionnalités pour \textit{Git-MediaWiki}.
 
 \section{Organisation de l'équipe}
 \subsection{Dates clef}
-Notre projet se déroulant suivant le principe des méthodes agiles, les dates importantes prévues sont les suivantes :
+Notre projet se déroule avec les principes des méthodes agiles, les dates importantes prévues sont les suivantes :
 
 \begin{itemize}
 \item Réunion de fin de sprint du Vendredi 25 Mai
@@ -224,7 +207,7 @@ Cette réunion se fait une fois par sprint avec le Product-Owner. Cette réunion
 Notre projet dépend de deux facteurs principaux. Notre product-owner, Mathieu Moy, d'une part. Et d'autre part la communauté de développement de Git.\\
 Un objectif important dans notre projet est de réussir à interagir au mieux avec la communauté, essentiellement par mail. C'est en effet nécessaire si l'on veut voir notre projet retenu pour la prochaine release de Git.
 \subsection{Risques pour le projet}
-Voici une liste des principaux risques que nous avons identifié pour notre projet, ainsi que des exemples de solution.
+Voici une liste des principaux risques que nous avons identifiés pour notre projet, ainsi que des exemples de solution.
 \begin{enumerate}
 \item La communauté n'est tout simplement pas intéressée par notre projet. 
 \item Nos travaux sont envoyés trop tard pour bénéficier de retours.
@@ -237,4 +220,9 @@ Solutions possibles :
 \item Faire de l'envoi à la Mailing-List une priorité.
 \item Choix d'un représentant auprès de l'équipe fonctionnalité. Ce poste est assuré par Charles Roussel. 
 \end{enumerate}
+
+\section{Conclusion}
+
+Pour beaucoup d'entre nous, ce sera notre premier projet avec les méthodes agiles. Une première découverte donc. De plus, nous allons tous, pour la première fois, développer pour un logiciel \textit{open source}. C'est-à-dire soumettre notre code à des développeurs expérimentés et utiliser une mailing-list mais aussi se conformer à des standards existants. L'autre grande valeur ajouté de ce projet de spécialité est que, pour la première fois, nous allons être en plein dans la validation de logiciel existant. Une activité non négligeable lors du développement que, jusque là, nous n'avons que très peu expérimenté lors de projet scolaire à l'ENSIMAG. 
+
 \end{document}
