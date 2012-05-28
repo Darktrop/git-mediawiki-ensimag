@@ -101,7 +101,7 @@ cmd_reset() {
                 fail "Can't find $DB_FILE in the current folder.
                 Please run the script inside its folder."
         fi
-        cp "$DB_FILE" "$TMP" || fail "Can't copy $DB_FILE in $TMP"
+        cp --preserve=mode,ownership "$DB_FILE" "$TMP" || fail "Can't copy $DB_FILE in $TMP"
         echo "File $DB_FILE is set in $TMP"
 }
 
