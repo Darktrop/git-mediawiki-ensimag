@@ -125,11 +125,12 @@
 \lfoot{}
 \cfoot{}
 \rfoot{\footnotesize\sf page~\thepage/\pageref{LastPage}}
-\lhead{\footnotesize\sf Projet GL}
+\lhead{\footnotesize\sf Projet de spécialité}
 \rhead{\footnotesize\sf ENSIMAG-2A} % numéro d'équipe Teide 
 
 % titre, auteur et date
-\title{Documentation technique du compilateur DecaC\\
+\title{Organisation pour le projet de spécialité\\
+Passerelle Git-MediaWiki\\
 ~\\
 \includegraphics[scale=0.75]{logo_ensimag.jpg} 
 }
@@ -138,6 +139,7 @@
 \author{Julien Khayat, Guillaume Sasdy, Simon Perrat, Charles Roussel, Simon Cathébras}
 \date{Le \today}
 \begin{document}
+\maketitle
 
 \section*{Description du projet et contexte}
 Habituellement les pages web d'un wiki se modifient directement sur un navigateur web à l'instar de \textit{Wikipédia}. L'année dernière une équipe d'élèves de l'école a développé \textit{Git-Mediawiki} à l'initiative de Matthieu Moy. Cet outil permet de modifier les pages d'un wiki sous forme de fichiers et de répertoires gérés par le logiciel \textit{open source} de gestion de version \textit{Git}. Ainsi nous profitons des (divines) fonctionnalités d'un tel gestionnaire comme la possibilité d'avoir plusieurs versions d'un wiki à un instant donné.\\
@@ -168,7 +170,7 @@ Perimètre étendu : debug du code de base + aider l'équipe fonctionnalité.
 \section*{Organistation de l'équipe et plannification}
 (Simon)
 
-\maketitle
+
 
 \section{Objectifs et périmètre}
 \subsection{Objectifs}
@@ -178,7 +180,7 @@ Nous avons découpé notre projet en trois objectifs classé dans l'ordre suivan
 \item Fournir à la communauté une couverture de test complètement du code de base. Le principal critère de réussite est la couverture du code.
 \item Nos tests doivent être conforme aux standards de la base de test de Git.
 \end{enumerate}
-Pour juger l'avancement de ces objectifs, nous prennons comme référence les avis de la communauté de développement de Git.\\
+Pour juger l'avancement de ces objectifs, nous prenons comme référence les avis de la communauté de développement de Git.\\
 \subsection{Périmètre}
 \subsubsection{l'environnement}
 L'environnement de test que nous allons mettre en place consiste essentiellement en des fonctions de manipulation de wiki. Nous avons également mis en place des fonctions de tests de contenu et de présence de fichiers. Ces fonctions sont utilisées pour faciliter la vérification de la cohérence entre un wiki de test et une archive git.
@@ -192,9 +194,47 @@ L'environnement de test que nous allons mettre en place consiste essentiellement
 \subsubsection{Les tests}
 Les tests que nous allons écrire serviront dans un premier temps à valider le code déjà écrit. C'est à dire les fonctionnalités basiques de la passerelle comme le clone, le push, et le pull.
 
-Une fois que ces fonctionnalités seront validées, nous planifions d'écrire des tests pour l'autre équipe de développement de la passerelle. Ce point est à la frontière du périmètre, c'est à dire que nous le réaliserons seulement si le projet peut être terminé dans les délais.
+Une fois que ces fonctionnalités seront validées, nous planifions d'écrire des tests pour l'autre équipe de développement de la passerelle. Ce point est à la frontière du périmètre, c'est à dire que nous le réaliserons seulement si le projet peut être terminé dans les délais. Toutefois, si nous arrivons à ce stade, nous envisageons de corriger les bugs existant dans le code que nous parviendrons à détecter avec l'environnement de tests.
 
+\section{Organisation de l'équipe}
+\subsection{Dates clef}
+Notre projet se déroulant suivant le principe des méthodes agiles, les dates importantes prévues sont les suivantes :
 
+\begin{itemize}
+\item Réunion de fin de sprint du Vendredi 25 Mai
+\item Réunion de fin de sprint du Lundi 4 Juin
+\item Réunion de fin de sprint du Lundi 11 Juin
+\item Rendu du rapport écrit le Jeudi 14 Juin
+\item Soutenance le Vendredi 15 Juin
+\end{itemize}
 
+Pour s'assurer que nous respectons ce planning du mieux possible, nous avons mis en œuvre plusieurs moyen agiles.\\
+\begin{itemize}
+\item Burndown
+\item Tableau de post-its de la méthode Scrum
+\end{itemize}
 
+\subsection{Organisation au quotidien}
+\paragraph{Stand-up Meeting}
+Chaque matin, l'équipe se réunit à heure fixe pour Stand-up Meeting.
+Chacun choisit les tâches qu'il remplira dans la journée, et signale à l'équipe si il rencontre des difficultés. 
+\paragraph{Réunion de fin de Sprint}
+Cette réunion se fait une fois par sprint avec le Product-Owner. Cette réunion a pour but de réaliser une démonstration de ce qui a été réalisé dans le sprint écoulé.
+\paragraph{Interactions}
+Notre projet dépend de deux facteurs principaux. Notre product-owner, Mathieu Moy, d'une part. Et d'autre part la communauté de développement de Git.\\
+Un objectif important dans notre projet est de réussir à interagir au mieux avec la communauté, essentiellement par mail. C'est en effet nécessaire si l'on veut voir notre projet retenu pour la prochaine release de Git.
+\subsection{Risques pour le projet}
+Voici une liste des principaux risques que nous avons identifié pour notre projet, ainsi que des exemples de solution.
+\begin{enumerate}
+\item La communauté n'est tout simplement pas intéressée par notre projet. 
+\item Nos travaux sont envoyés trop tard pour bénéficier de retours.
+\item L'équipe fonctionnalité est mise en retard pour réaliser des tests.
+\end{enumerate}
+
+Solutions possibles :
+\begin{enumerate}
+\item Envoyer un mail au plus tôt avec des exemples sur nos travaux. Être actifs pour promouvoir notre projet.
+\item Faire de l'envoi à la Mailing-List une priorité.
+\item Choix d'un représentant auprès de l'équipe fonctionnalité. Ce poste est assuré par Charles Roussel. 
+\end{enumerate}
 \end{document}
