@@ -4,6 +4,7 @@
 # It requires a web server with PHP and a database running and mediawiki installed.
 # As it changes some permissions file, it surely needs root privileges.
 # Please set the CONFIGURATION VARIABLES section below first.
+# Please note the wiki admin login is 'WikiAdmin' and password is 'AdminPass'
 
 #
 # CONFIGURATION VARIABLES

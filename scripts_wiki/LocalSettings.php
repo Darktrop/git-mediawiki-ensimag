@@ -52,7 +52,7 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype           = "sqlite";
-$wgDBserver         = "";
+$wgDBserver         = "localhost";
 $wgDBname           = "wikidb";
 $wgDBuser           = "";
 $wgDBpassword       = "";
@@ -92,11 +92,11 @@ $wgShellLocale = "en_US.utf8";
 # Site language code, should be one of the list in ./languages/Names.php
 $wgLanguageCode = "en";
 
-$wgSecretKey = "1c912bfe3519fb70f5dc523ecc698111cd43d81a11c585b3eefb28f29c2699b7";
+$wgSecretKey = "d05f5e8b217d8f9def952d93d86cd0cc9a9a61886d6b3d9c246d2f0221bbe4b6";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "ddae7dc87cd0a645";
+$wgUpgradeKey = "f15928b208de227d";
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, ie 'standard', 'nostalgia', 'cologneblue', 'monobook', 'vector':
