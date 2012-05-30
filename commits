@@ -1,5 +1,10 @@
 PATCH 1 :
 
+The tests required a wiki installed on localhost, which can be fairly long.
+The script install_wiki.sh requires minimum preconditions and interaction,
+so it can be run directly in the script testing mediawiki.
+
+-- OLD --
 install_wiki.sh expects the first argument to be 'install' or 'delete'
 'install' installs a MediaWiki on the web's server with SQLite3
 'delete' deletes the previously created wiki. Note those
@@ -9,6 +14,7 @@ directory /t
 install_wiki also defines a function cmd_reset which clear all content
 of the previously created wiki. Note this functionnality is made to be
 used only by our test function in a subdirectory of t/
+--
 
 PATCH 2
 
