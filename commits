@@ -1,0 +1,20 @@
+PATCH 1 :
+
+install_wiki.sh expects the first argument to be 'install' or 'delete'
+'install' installs a MediaWiki on the web's server with SQLite3
+'delete' deletes the previously created wiki. Note those
+functionnalities are made to be used from the user command line in the
+directory /t
+
+install_wiki also defines a function cmd_reset which clear all content
+of the previously created wiki. Note this functionnality is made to be
+used only by our test function in a subdirectory of t/
+
+PATCH 2
+
+Functions to manage a MediaWiki: edit a page, remove a page, fetch a
+page, fetch all pages on a given wiki.
+
+Functions to compare the content of directories.
+
+
