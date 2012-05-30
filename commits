@@ -12,9 +12,10 @@ used only by our test function in a subdirectory of t/
 
 PATCH 2
 
-Functions to manage a MediaWiki: edit a page, remove a page, fetch a
-page, fetch all pages on a given wiki.
+In order to test git-remote-mediawiki, we need a package of functions 
+to manage a MediaWiki: edit a page, remove a page, fetch a page, 
+fetch all pages on a given wiki.
 
-Functions to compare the content of directories.
+We also need functions to compare the content of directories.
 
 
