@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.5.24)  30 MAY 2012 17:00
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.5.24)  1 JUN 2012 08:44
 entering extended mode
  %&-line parsing enabled.
 **rapport_Final.tex
@@ -422,34 +422,53 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 142.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 142.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 168.
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
+
+ []
+
+
+LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 170.
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
  <./logo_ensimag.jpg>]
-AED: lastpage setting LastPage [2] (./rapport_Final.aux) ) 
+
+LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 210.
+
+[2] AED: lastpage setting LastPage
+
+LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 235.
+
+[3] (./rapport_Final.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3589 strings out of 495046
- 47157 string characters out of 1181937
- 135655 words of memory out of 3000000
- 6741 multiletter control sequences out of 15000+50000
- 10121 words of font info for 35 fonts, out of 3000000 for 9000
+ 3593 strings out of 495046
+ 47183 string characters out of 1181937
+ 136655 words of memory out of 3000000
+ 6743 multiletter control sequences out of 15000+50000
+ 10172 words of font info for 35 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 29i,11n,43p,208b,348s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.p
-fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public
-/amsfonts/cm/cmti10.pfb>
-Output written on rapport_Final.pdf (2 pages, 214312 bytes).
+ 32i,11n,43p,498b,409s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-texlive/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
+/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pf
+b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmti10.pfb>
+Output written on rapport_Final.pdf (3 pages, 237107 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
+ 57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
