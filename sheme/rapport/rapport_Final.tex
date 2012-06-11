@@ -143,6 +143,54 @@ Passerelle Git-MediaWiki, environement de test\\
 
 \section{Travail réalisé}
 
+Le travail réalisé durant ce projet est un environnement de test pour la passerelle \textit{Git-MediaWiki}, un projet développé depuis plusieurs années à l'Ensimag.
+
+\subsection{La passerelle  \textit{Git-MediaWiki}}
+
+Ce projet a pour but de permettre de gérer un MediaWiki a l'aide de Git. Pour mieux comprendre ce projet, nous allons procéder à une explication de ce que sont Git et MediaWiki. 
+
+\subsubsection{MediaWiki : des sites communautaires à contribution libre}
+
+La meilleure manière de décrire ce qu'est un mediawiki est de prendre un exemple : Wikipédia. Wikipédia est le plus connu des mediawiki, et présente toutes les caractéristiques d'un médiawiki : 
+
+
+\begin{itemize}
+\item Chacun peut y contribuer de manière libre
+\item Possibilité d'ajouter / supprimer / éditer des pages \\
+\end{itemize}
+
+Le principal défaut de ces sites est que leur édition peut s'avérer fastidieuse, on note quelques problématiques à soulever :
+
+\begin{itemize}
+\item problème avec les éditions concurrentes
+\item la moindre petite modification de pages engendre une entrée dans l'historique.
+\item les pages s'éditent une à la fois, donc si on a une modification récurrente sur plusieurs pages, on se retrouve avec un historique compliqué.
+\item de même une mise à jour importante ( ex : ajout de plusieurs pages sur un projet pour l'Ensiwiki ) on doit ajouter les pages une à une.
+\item lors d'une mise à jour importante nécessitant un long travail sur une page, on se retrouve face à un dileme :
+\begin{itemize}
+\item soit on enregistre régulière et on produit un historique "sale"
+\item soit on enregistre qu'une fois le travail terminé et on s'expose au risque de perte des heure de travail en cas de crash de l'ordinateur, ou de fermeture du navigateur par erreur.
+\end{itemize}
+\end{itemize}
+
+Le but de la passerelle est d'apporter une solution simple à ces problèmes en mettant à jour les mediawiki à l'aide d'un gestionnaire de version : \textit{Git}
+
+\subsubsection{Git : un gestionnaire de version}
+
+Un gestionnaire de version permet de partager une série de fichiers sur un serveur et de permettre à plusieurs personne de les éditer en concurrence.  En gérant les pages MediaWiki via \textit{Git} on permet à l'utilisateur de résoudre la plupart des problèmes liés aux mediawiki ( cf ci dessus ). L'idée est d'obtenir une copie locale des pages du wiki pour bénéficier des avantages de ce mode de stockage.
+
+\begin{itemize}
+\item les fichiers en local permettent d'éditer un fichier en plusieurs fois et de faire une seule mise en ligne. Un historique plus propre et pas de risque lors de l'édition des pages
+\item On peut facilement faire une grosse mise à jour de plusieurs pages sur le wiki sans problèmes. 
+\item aucun risque de perte de donnée en cours d'édition, la plupart des éditeurs de texte ont un système de sauvegarde automatique.
+\end{itemize}
+
+\subsection{L'environnement de tests}
+
+Le projet \textit{Git-MediaWiki} est actuellement dans le répertoire \textit{contrib/} de la branche master de Git. Pour pouvoir aller plus loin, c'est à dire se retrouver nativement intégré à Git, la passerelle doit se pourvoir d'une base de tests beaucoup plus approfondie que l'actuelle. Jusqu'à aujourd'hui, les tests de \textit{Git-MediaWiki} étaient effectués à la main en vérifiant le contenu des pages Wiki et des fichier dans le dépot Git. 
+
+L'objectif de notre groupe est de construire un environnement complet de tests pour la passerelle, avec pour objectif, à terme, de permettre l'avancée de \textit{Git-MediaWiki} hors du répertoire contrib. Le principe est d'avoir toute une batterie de tests s'exécutant automatiquement et validant les fonctionnalités déjà développées, ou indiquant que des fonctionnalitées ne le sont toujours pas.
+
 \section{La communautée \textit{Git}}
 
 \subsection{Organisation}
@@ -157,15 +205,15 @@ Le premier run de ce projet de spécialité a comporté un nombre conséquent de
 
 \subsubsection{problèmes techniques}
 
-Durant le premier run, nous avons eu des difficultées à apréhender le projet. Nous avons du procéder à beaucoup de changements de structure pour notre code
+Durant le premier run, nous avons eu des difficultés à appréhender le projet. Nous avons dû procéder à beaucoup de changements de structure pour notre code
 \begin{enumerate}
-\item plusieur fichier \textit{bash} encapsulant du \textit{perl}
+\item plusieurs fichiers \textit{bash} encapsulant du \textit{Perl}
 \item continuer les étapes
 \end{enumerate}
 
 \subsubsection{problèmes organisationnels}
 
-Après une analyse à la fin du $1^{er}$ run, nous avons déterminé plusieurs problèmes d'organisation : 
+Après une analyse à la fin du premier run, nous avons déterminé plusieurs problèmes d'organisation : 
 
 \begin{itemize}
 \item manque de communication dans le groupe
@@ -177,6 +225,10 @@ Après une analyse à la fin du $1^{er}$ run, nous avons déterminé plusieurs p
 Tout ces points conduisant à un premiers run assez désorganisé, produisant des difficultés à apréhender le projet sur un plan général.
 
 \subsection{Deuxième Run : Mardi 29 Mai $\rightarrow$ Lundi 4 Juin}
+
+Pour le second run, on rencontre beaucoup moins de difficultées. Quelques problèmes techniques ont parfois ralentit la progression du projet, mais jamais de manière drastique. Notre plus gros problème a été d'avoir sous-estimé le temps que prendrais d'apporter les correctifs demandés par la mailling list. 
+
+Le travail prévu à cette fois été effectué à temps et correctement.
 
 \subsection{Troisième Run : Lundi 4 juin $\rightarrow$ Lundi 11 juin}
 
