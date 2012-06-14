@@ -239,11 +239,46 @@ dans coeur de \textit{Git}.
 
 \section{La communautée \textit{Git}}
 
-
+\textit{Git} est un logiciel libre et open source, ce qui signifie que
+tout le monde a accès à son code source et peut y contribuer en
+proposant des modifications. Il existe alors une communauté de
+développeurs contribuant à \textit{Git}, qui communiquent ensemble via
+une mailing-list dédiée et échangent ainsi sur les bugs rencontrés et
+leur correction, les ajouts de fonctionnalités et les mises à jour du
+code de manière générale. La version officielle est maintenue par
+Junio~C.~Hamano, qui se charge de vérifier que les patches proposés
+ont un niveau de finition suffisant pour être intégrés, en plus d'être
+lui-même un des contributeurs principaux au code source de \textit{Git}.
 
 \subsection{Organisation}
 
+Le code de \textit{Git} est disponible librement sur une archive
+\textit{Git}. Cette archive comprend trois branches, qui correspondent
+chacune à différents avancements des patches proposés. La principale,
+\textit{master}, est celle qui correspond à la version officielle
+distribuée. La branche \textit{next} contient les patches qui seront
+ajoutés à la prochaine version officielle. Enfin, la branche
+\textit{pu}, pour \textit{proposed updates}, comprend les patches qui
+sont en voie d'intégration à \textit{Git}, mais qui ont encore besoin
+de peaufinage pour passer dans \textit{next}. Il faut noter qu'avant
+même qu'un patch puisse passer dans cette branche, il doit déjà être
+relu, testé et approuvé par la communauté sur la mailing-list.
+
 \subsection{Interactions avec la communautée}
+
+Nos échanges avec la communauté se font via la mailing-list de
+\textit{Git}. Nos propositions de patches se font en plusieurs temps~:
+tout d'abord, nous envoyons sur cette liste de diffusion une `cover
+letter`, soit un mail où nous présentons notre équipe et notre
+projet. Lorsque nos premiers travaux nous semblent assez mûrs, nous
+envoyons alors un série de patches sur la mailing list, que la
+communauté peut alors relire et commenter. Nous tenons alors compte
+des critiques émises pour corriger notre code, et envoyons une
+nouvelle série de patches. Nous continuons ainsi jusqu'à obtenir un
+code qui atteigne les critères d'acceptation par \textit{Git}, et qui
+soit en mesure d'être ajouté à la branche \textit{pu}.
+Actuellement, nous n'avons pas atteint cette branche mais avons bon
+espoir d'y parvenir.
 
 \section{Difficultées pendant le projet}
 
