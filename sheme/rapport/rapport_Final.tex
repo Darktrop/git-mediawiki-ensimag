@@ -151,7 +151,7 @@ dernière à l'Ensimag.
 \subsection{La passerelle  \textit{Git-MediaWiki}}
 
 Cet outil a pour but de permettre de gérer un MediaWiki a l'aide de
-Git. Pour bien comprendre de quoi il retourne, nous allons expliquer
+Git. Pour bien comprendre de quoi il s'agit, nous allons expliquer
 précisément ce que sont Git et MediaWiki
 
 \subsubsection{MediaWiki : des sites communautaires à contribution libre}
@@ -235,15 +235,12 @@ L'objectif de notre groupe est de construire un environnement complet
 de tests pour la passerelle, avec pour objectif, à court terme de
 valider les fonctionnalités existantes et d'en développer de
 nouvelles, à long terme de pousser \textit{Git-MediaWiki} jusque
-dans coeur de \textit{Git}.
+dans le coeur de \textit{Git}.
 
 \subsubsection{Un wiki sur localhost}
 
 Pour effectuer les tests de \textit{Git-MediaWiki}, un premier 
-pré-requis est de posséder un wiki installé à l'adresse (par défaut) 
-http://localhost/wiki. Pour éviter que les utilisateur aient à 
-effectuer les pénibles étapes de création d'un wiki, l'équipe a
-décidé de fournir un script d'installation de wiki en local.
+pré-requis est de posséder un wiki installé en local (par défaut). Pour éviter que les utilisateur aient à effectuer les pénibles étapes de création d'un wiki, l'équipe a décidé de fournir un script d'installation de wiki en local.
 
 L'idée est de disposer ainsi d'un wiki connu avec lequel les tests 
 peuvent interagir aisément. On fournit donc avec ce wiki un 
@@ -252,15 +249,15 @@ supression et édition de page; récupération d'une page et de son
 contenu; comparaison d'une page et d'un fichier; etc...
 
 Le wiki ainsi créé dispose en plus d'un fonction 
-\lstinline!wiki\_reset! qui permet d'assurer qu'un wiki est vierge
-au début de chacun des tests de la batterie proposée.
+\lstinline!wiki_reset! qui permet d'assurer qu'un wiki est vierge
+au début de chacun des tests composant la batterie de tests.
 
 \subsubsection{Une Batterie de test}
 
-Cette partie de notre travail est pour ainsi dire le \textit{coeur} 
+Cette partie de notre travail est pour ainsi dire le coeur 
 de notre projet. Nous proposons à l'utilisateur une batterie complète
 de test pour \textit{Git-MediaWiki} activée via la commande 
-\lstinline!Make test!. Ces tests sont conçu pour la valider le 
+\lstinline!Make test!. Ces tests sont conçu pour valider le 
 fonctionnement de \textit{Git-MediaWiki}, avec 2 objectifs principaux.
 
 \begin{enumerate}
@@ -270,7 +267,7 @@ fonctionnement de \textit{Git-MediaWiki}, avec 2 objectifs principaux.
   le TDD (\textit{Test Driven Developpement}). \\
 \item Détecter et référencer les bugs actuels de la passerelle à l'aide
   des fonctions de la base de test de qui, et ainsi posséder une base 
-  solide du fonctionnement ( ou non ) de la passerelle selon les cas. De
+  solide du fonctionnement (ou non) de la passerelle selon les cas. De
   plus, si un développeur indépendant veut débugguer la passerelle, ces 
   tests lui seront très utile pour savoir si oui ou non ses modifications
   sont efficaces.
@@ -289,7 +286,7 @@ doit être effectué par l'utilisateur, on ne dispose pas encore de
 système automatisé de la solution à employer.  On distingue 2 cas :
 
 \begin{itemize}
-\item Dans le cas ou on a plus de révisions ( i.e modification ) du wiki 
+\item Dans le cas ou on a plus de révisions (i.e modification) du wiki 
   que de pages, on va procéder en récupérant la dernière mise à jour de chaque
   page. C'est la méthode présente nativement sur \textit{Git-MediaWiki}. Celle
   ci peut poser des problèmes dans le cas d'un wiki avec beaucoup de pages et
@@ -375,7 +372,7 @@ Tout ces points conduisant à un premiers run assez désorganisé, produisant de
 \item stand-up meeting fixé à 9h35 chaque matin~;
 \item petit-déjeuner d'équipe~;
 \item utilisation systématique des post-it~;
-\item programmation par paire et relecture de code obligatoire.
+\item pair programming et relecture de code obligatoire.
 \end{itemize}
 
   Ces quelques règles nous ont permis de gagner significativement en
@@ -434,7 +431,6 @@ Tout ces points conduisant à un premiers run assez désorganisé, produisant de
 
   \begin{itemize}
   \item donner des informations ``technique'' sur le projet sur la page de présentation. Il aurait put être interessant de connaitre les langages utilisés à l'avance. 
-  \item 
   \end{itemize}
 
 \end{document}
