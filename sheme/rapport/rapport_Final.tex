@@ -328,7 +328,7 @@ de peaufinage pour passer dans \textit{next}. Il faut noter qu'avant
 même qu'un patch puisse passer dans cette branche, il doit déjà être
 relu, testé et approuvé par la communauté sur la mailing-list.
 
-\subsection{Interactions avec la communautée}
+\subsection{Interactions avec la communauté}
 
 Nos échanges avec la communauté se font via la mailing-list de
 \textit{Git}. Nos propositions de patches se font en plusieurs temps~:
@@ -346,38 +346,78 @@ espoir d'y parvenir.
 
 \section{Difficultées pendant le projet}
 
-\subsection{Premier Run : Lundi 21 Mai $\rightarrow$ Mardi 29 Mai}
+\subsection{Premier sprint~: lundi 21 mai $\rightarrow$ mardi 29 mai}
 
-Le premier run de ce projet de spécialité a comporté un nombre conséquent de problèmes, tant au niveau organisationnel que technique
+Le premier sprint a été consacré à la découverte du projet et du
+contexte de travail. Nous espérions pouvoir rentrer rapidement dans le
+vif du sujet et envoyer un premier patch sur la mailing, mais les
+difficultés techniques et organisationnelles rencontrées nous ont
+forcés à reconsidérer cet objectif.
 
-\subsubsection{problèmes techniques}
+\subsubsection{Difficultés techniques}
 
-Durant le premier run, nous avons eu des difficultés à appréhender le projet. Nous avons dû procéder à beaucoup de changements de structure pour notre code
-\begin{enumerate}
-\item plusieurs fichiers \textit{bash} encapsulant du \textit{Perl}
-\item continuer les étapes
-\end{enumerate}
+Il nous a fallu comprendre comment était organisé \textit{Git} et
+plonger dans le code du script \textit{git-remote-mediawiki} pour
+comprendre son fonctionnement. Nous avons rencontré nos premières
+vraies difficultés lorsqu'il a fallu le tester sur nos machines
+personnelles, avec l'installation de \textit{Perl} et de
+\textit{MediaWiki}~; c'était toutefois indispensable pour bien en
+appréhender le fonctionnement et nous a été utile lorsqu'il a fallu
+écrire nos scripts d'installation.
 
-\subsubsection{problèmes organisationnels}
+\subsubsection{Problèmes organisationnels}
 
-Après une analyse à la fin du premier run, nous avons déterminé plusieurs problèmes d'organisation : 
+Pour la plupart des membres du groupe, il s'agissait de notre premier
+vrai projet utilisant une méthode agile, ce qui s'est accompagné de
+plusieurs soucis au sein de l'équipe~:
 
 \begin{itemize}
-\item manque de communication dans le groupe
-\item mauvaise compréhension de certains points de la charte d'équipe par une partie du groupe.
-\item plusieurs membres du groupe ont du s'absenter un après midi ou une journée pour des raisons personnelles
-\item pas d'évènement de cohésion de groupe
+\item manque de communication dans le groupe~;
+\item mauvaise compréhension de certains points de la charte d'équipe
+  par une partie du groupe~;
+\item plusieurs membres du groupe ont du s'absenter un après midi ou
+  une journée pour des raisons personnelles~;
+\item pas d'évènement de cohésion de groupe.
 \end{itemize}
 
-Tout ces points conduisant à un premiers run assez désorganisé, produisant des difficultés à apréhender le projet sur un plan général.
+Mis bout à bout, ces points ont conduit à un premier sprint assez
+désorganisé, ce qui nous a amenés à repenser notre
+fonctionnement, tant en terme de travail que de cohésion~:
 
-\subsection{Deuxième Run : Mardi 29 Mai $\rightarrow$ Mardi 5 Juin}
+\begin{itemize}
+\item stand-up meeting fixé à 9h35 chaque matin~;
+\item petit-déjeuner d'équipe~;
+\item utilisation systématique des post-it~;
+\item programmation par paire et relecture de code obligatoire.
 
-Pour le second run, on rencontre beaucoup moins de difficultées. Quelques problèmes techniques ont parfois ralentit la progression du projet, mais jamais de manière drastique. Notre plus gros problème a été d'avoir sous-estimé le temps que prendrais d'apporter les correctifs demandés par la mailling list. 
+Ces quelques règles nous ont permis de gagner significativement en
+efficacité lors du deuxième sprint.
 
-Le travail prévu à cette fois été effectué à temps et correctement.
+\subsection{Deuxième sprint~: mardi 29 mai $\rightarrow$ mardi 5 juin}
 
-\subsection{Troisième Run : Mardi 5 juin $\rightarrow$ Mercredi 13 juin}
+Notre priorité lors de ce sprint était d'envoyer un premier patch sur
+la mailing-list, afin d'avoir une idée de l'opinion que se fait la
+communauté de notre projet. Cet objectif clair associé à notre
+organisation nous a permi de travailler efficacement, et nous avons pu
+envoyer la première version de notre batterie de tests sur la
+mailing-list, puis prendre en compte les retours.
+
+\subsection{Troisième sprint~: mardi 5 juin $\rightarrow$ mercredi 13 juin}
+
+Ce sprint s'est nettement moins bien passé que le précédent~: malgré
+un début de sprint où nous sommes restés sur la lancé du précédent et
+avons continué à avancer, nous avons commencé à rencontrer des
+problèmes techniques que nous n'avions pas sérieusement appréhendés au
+début du projet, à savoir l'application de nos patches à d'autres
+machines que les nôtres avec les contraintes techniques
+associées. En plus de cela, nous avons eu des problèmes lorsqu'il a
+fallu intégrer nos travaux respectifs ensemble, et nous avons perdu
+énormément de temps à former une série de patch qui puisse être
+envoyée sur la mailing-list. En fin de sprint, nous nous sommes donc
+rendus compte d'une part que nous avions perdu certaines de nos bonnes
+habitudes du sprint précédent, d'autre part qu'il nous a manqué
+d'avoir certaines règles de codage qui auraient facilité l'intégration
+de nos travaux.
 
 \section{Bilan}
 
