@@ -237,6 +237,70 @@ valider les fonctionnalités existantes et d'en développer de
 nouvelles, à long terme de pousser \textit{Git-MediaWiki} jusque
 dans coeur de \textit{Git}.
 
+\subsubsection{Un wiki sur localhost}
+
+Pour effectuer les tests de \textit{Git-MediaWiki}, un premier 
+pré-requis est de posséder un wiki installé à l'adresse (par défaut) 
+http://localhost/wiki. Pour éviter que les utilisateur aient à 
+effectuer les pénibles étapes de création d'un wiki, l'équipe a
+décidé de fournir un script d'installation de wiki en local.
+
+L'idée est de disposer ainsi d'un wiki connu avec lequel les tests 
+peuvent interagir aisément. On fournit donc avec ce wiki un 
+package complet de fonction pour manipuler ce wiki : ajout, 
+supression et édition de page; récupération d'une page et de son 
+contenu; comparaison d'une page et d'un fichier; etc...
+
+Le wiki ainsi créé dispose en plus d'un fonction 
+\lstinline!wiki\_reset! qui permet d'assurer qu'un wiki est vierge
+au début de chacun des tests de la batterie proposée.
+
+\subsubsection{Une Batterie de test}
+
+Cette partie de notre travail est pour ainsi dire le \textit{coeur} 
+de notre projet. Nous proposons à l'utilisateur une batterie complète
+de test pour \textit{Git-MediaWiki} activée via la commande 
+\lstinline!Make test!. Ces tests sont conçu pour la valider le 
+fonctionnement de \textit{Git-MediaWiki}, avec 2 objectifs principaux.
+
+\begin{enumerate}
+\item Disposer d'une base de test de non régression pour les prochain 
+contributeurs à la passerelle. De plus, disposer d'un environnement de 
+tests complet permet d'utiliser facilement des méthodes agiles tel que
+le TDD (\textit{Test Driven Developpement}). \\
+\item Détecter et référencer les bugs actuels de la passerelle à l'aide
+des fonctions de la base de test de qui, et ainsi posséder une base 
+solide du fonctionnement ( ou non ) de la passerelle selon les cas. De
+plus, si un développeur indépendant veut débugguer la passerelle, ces 
+tests lui seront très utile pour savoir si oui ou non ses modifications
+sont efficaces.
+\end{enumerate}
+
+\subsubsection{Une amélioration de performance}
+
+En plus de l'environement de test, notre équipe a également développé 
+une amélioration de performance pour \textit{Git-MediaWiki}. Selon le
+type de wiki cloné, la passerelle actuelle peut parfois s'avérer très
+lente pour des opérations simple (\textit{git pull}). L'idée de cette
+optimisation est de déterminer l'évolution du wiki depuis la dernière
+mise à jour du dépot Git, et de récupérer les modifications d'une 
+manière différente selon celles ci. Actuellement, ce choix de méthode
+doit être effectué par l'utilisateur, on ne dispose pas encore de
+système automatisé de la solution à employer.  On distingue 2 cas :
+
+\begin{itemize}
+\item Dans le cas ou on a plus de révisions ( i.e modification ) du wiki 
+que de pages, on va procéder en récupérant la dernière mise à jour de chaque
+page. C'est la méthode présente nativement sur \textit{Git-MediaWiki}. Celle
+ci peut poser des problèmes dans le cas d'un wiki avec beaucoup de pages et
+peu actif.\\
+\item L'autre possibilité est d'avoir moins de révision que de pages dans le
+wiki. Dans ce cas, la bonne méthode est non plus de regarder page par page,
+mais de consulter la liste des révisions et de ne récupérer que la plus récente
+pour chacune des page. Cette méthode est, au contraire de la précédente, très
+efficace pour des wiki peu actifs, mais va peiner sur des wiki plus ``gros". 
+\end{itemize}
+
 \section{La communautée \textit{Git}}
 
 \textit{Git} est un logiciel libre et open source, ce qui signifie que
