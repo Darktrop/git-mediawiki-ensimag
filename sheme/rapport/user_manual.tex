@@ -138,20 +138,22 @@
 %% penser à indiquer: numéro d'équipe Teide + noms + groupe TD
 \author{Simon Cathébras, Julien Khayat, Simon Perrat, Charles Roussel,
   Guillaume Sasdy}
-  
+
 \begin{document}
 \maketitle
 \newpage
 \section*{Introduction}
-This manual describes how to install the git-remote-mediawiki test environment on a machine with git installed on it.
+This manual describes how to install the git-remote-mediawiki test
+environment on a machine with git installed on it.
 \part*{Prerequisite}
 \section{Get the sources}
-To be able to run this test environment you first need to get the sources developped in our project.
-
-To do so, see the following git-hub: \lstinline!https://github.com/Fafinou/git/!.\\
-Then, get the Master branch to apply our main five patches. You are now able to run our git-remote-mediawiki test environment.
+To be able to run this test environment you first need to get the
+sources developped in our project, which you can download at
+\lstinline!https://github.com/Fafinou/git/!. Then, get our five main
+patches from branch master.
 \section{Packages required}
-In order to run this test environment correctly, you will need the following packages.
+In order to run this test environment correctly, you will need to
+install the following packages.
 \begin{itemize}
 \item php5-cli
 \item lighttpd
@@ -162,52 +164,68 @@ In order to run this test environment correctly, you will need the following pac
 \end{itemize}
 \part*{Run the test environment}
 \section{Install a new wiki}
-Once you have all the prerequisite, you are able to use the git-remote-mediawiki test environment.
-First, you need to install a wiki on which you can test your future modification to git-remote-mediawiki.
-To do so, execute the following.
+Once you have all the prerequisite, you need to install a MediaWiki on
+your machine; if you already have one, we strongly recommend you to
+install one with the script we provide. Here's how to work it:
 \begin{itemize}
-\item go into the \lstinline!contrib/mw-to-git/t/! directory
-\item Edit the file \lstinline!test.config!. You may choose several installation parameters.
+\item change directory to \lstinline!contrib/mw-to-git/t/!
+\item edit \lstinline!test.config! to choose your installation parameters
 \item run \lstinline!./install-wiki.sh install!
-\item check on your favourite web browser if your wiki is correctly installed
+\item check on your favourite web browser if your wiki is correctly
+  installed.
 \end{itemize}
 
 \section{Remove an existing wiki}
-Simply edit the file \lstinline!test.config! to fit the wiki you want to delete, and execute the command \lstinline!./install-wiki.sh delete!\\
-into the \lstinline!contrib/mw-to-git/t! directory.
+Simply edit the file \lstinline!test.config! to fit the wiki you want
+to delete, and execute the command \lstinline!./install-wiki.sh
+delete! into the \lstinline!contrib/mw-to-git/t! directory.
 \section{Run the existing tests}
-The furnished tests are currently in the \lstinline!contrib/mw-to-git/t! directory. The files are all the \lstinline!t936*! shell scripts.\\
+The furnished tests are currently in the
+\lstinline!contrib/mw-to-git/t! directory. The files are all the
+\lstinline!t936*! shell scripts.
 
 \paragraph*{Run all tests}
-To do so, simply go into the \lstinline!contrib/mw-to-git/! directory, and do \lstinline!Make test!.
+To do so, simply go into the \lstinline!contrib/mw-to-git/! directory,
+and do \lstinline!Make test!.
 
 \paragraph*{Run a specific test}
-To run a given test \lstinline!test_name!, go into the \lstinline!contrib/mw-to-git/t! directory and run \lstinline!./test_name!.
+To run a given test \lstinline!test_name!, go into the
+\lstinline!contrib/mw-to-git/t! directory and run
+\lstinline!./test_name!.
 
 \part*{Create new tests}
 
 \section{Available functions}
-The test environment of git-remote-mediawiki provides you some functions useful to test the behaviours of git-remote-mediawiki. for more details about function's parameters, please refer to the test-gitmw.pl file.
+The test environment of git-remote-mediawiki provides you with some
+functions useful to test the behaviour of git-remote-mediawiki. for
+more details about the functions' parameters, please refer to the
+\lstinline!test-gitmw.pl! file.
 
 \paragraph*{\lstinline!test_check_wiki_precond!}
-Checks if the tests must be skipped or not. Please use this function at the beggining of each new test file.
+Checks if the tests must be skipped or not. Please use this function
+at the beggining of each new test file.
 
 \paragraph*{\lstinline!wiki_getpage!}
-Fetchs a given page from the wiki and puts its content in the directory in parameter.
+Fetchs a given page from the wiki and puts its content in the
+directory in parameter.
 
 \paragraph*{\lstinline!wiki_delete_page!}
 Deletes a given page from the wiki.
 
 \paragraph*{\lstinline!wiki_edit_page!}
-Creates or modifies a given page in the wiki. You can specify several parameters like a summary for the page edition, or add the page to a given category.\\
-Please, see test-gitmw.pl for more details.
+Creates or modifies a given page in the wiki. You can specify several
+parameters like a summary for the page edition, or add the page to a
+given category.\\
+Please, see \lstinline!test-gitmw.pl! for more details.
 
 \paragraph*{\lstinline!wiki_getallpage!}
-Fetchs all pages from the wiki into a given directory. The directory is created if it does not exists.
+Fetchs all pages from the wiki into a given directory. The directory
+is created if it does not exists.
 
 \paragraph*{\lstinline!test_diff_directories!}
 Compares the content of two directories. The content must be the same.
-Use this function to compare the content of a git directory and a wiki one created by \lstinline!wiki_getallpage!.
+Use this function to compare the content of a git directory and a wiki
+one created by \lstinline!wiki_getallpage!.
 
 \paragraph*{\lstinline!test_contains_N_files!}
 Checks if the given directory contains a given number of file.
@@ -216,12 +234,13 @@ Checks if the given directory contains a given number of file.
 Tests if a given page exists on the wiki.
 
 \paragraph*{\lstinline!wiki_reset!}
-Reset the wiki, ie flush the database. Use this function at the begining of each new test.
+Reset the wiki, ie flush the database. Use this function at the
+begining of each new test.
 
 \section{How to write a new test}
-Please, follow the standard given by git. See \lstinline!git/t/README!.\\
+Please, follow the standards given by git. See \lstinline!git/t/README!.\\
 Name your new file \lstinline!t936[...].sh!.
 Be sure to reset your wiki regulary with the function \lstinline!wiki_reset!
 
-  
+
 \end{document}
