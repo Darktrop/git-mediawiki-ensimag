@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.5.24)  14 JUN 2012 16:35
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.5.24)  14 JUN 2012 17:12
 entering extended mode
  %&-line parsing enabled.
 **rapport_Final.tex
@@ -436,40 +436,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 292--297
 
  []
 
-[3] [4] [5] AED: lastpage setting LastPage [6]
-
-! LaTeX Error: \begin{itemize} on input line 387 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.457 \end{document}
-                    
-? 
-(./rapport_Final.aux) )
-(\end occurred inside a group at level 1)
-
-### semi simple group (level 1) entered at line 387 (\begingroup)
-### bottom level 
+[3] [4] [5] AED: lastpage setting LastPage [6] (./rapport_Final.aux) ) 
 Here is how much of TeX's memory you used:
- 3942 strings out of 495046
- 49981 string characters out of 1181937
+ 3943 strings out of 495046
+ 49989 string characters out of 1181937
  138655 words of memory out of 3000000
- 7093 multiletter control sequences out of 15000+50000
+ 7094 multiletter control sequences out of 15000+50000
  10032 words of font info for 35 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 28i,11n,43p,560b,1118s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10
-.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/tex
-mf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/f
-onts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
-ts/cm/cmss9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on rapport_Final.pdf (6 pages, 249055 bytes).
+ 28i,12n,43p,208b,1118s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.p
+fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on rapport_Final.pdf (6 pages, 249890 bytes).
 PDF statistics:
  62 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

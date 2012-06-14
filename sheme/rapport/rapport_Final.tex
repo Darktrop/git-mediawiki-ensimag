@@ -265,15 +265,15 @@ fonctionnement de \textit{Git-MediaWiki}, avec 2 objectifs principaux.
 
 \begin{enumerate}
 \item Disposer d'une base de test de non régression pour les prochain 
-contributeurs à la passerelle. De plus, disposer d'un environnement de 
-tests complet permet d'utiliser facilement des méthodes agiles tel que
-le TDD (\textit{Test Driven Developpement}). \\
+  contributeurs à la passerelle. De plus, disposer d'un environnement de 
+  tests complet permet d'utiliser facilement des méthodes agiles tel que
+  le TDD (\textit{Test Driven Developpement}). \\
 \item Détecter et référencer les bugs actuels de la passerelle à l'aide
-des fonctions de la base de test de qui, et ainsi posséder une base 
-solide du fonctionnement ( ou non ) de la passerelle selon les cas. De
-plus, si un développeur indépendant veut débugguer la passerelle, ces 
-tests lui seront très utile pour savoir si oui ou non ses modifications
-sont efficaces.
+  des fonctions de la base de test de qui, et ainsi posséder une base 
+  solide du fonctionnement ( ou non ) de la passerelle selon les cas. De
+  plus, si un développeur indépendant veut débugguer la passerelle, ces 
+  tests lui seront très utile pour savoir si oui ou non ses modifications
+  sont efficaces.
 \end{enumerate}
 
 \subsubsection{Une amélioration de performance}
@@ -290,15 +290,15 @@ système automatisé de la solution à employer.  On distingue 2 cas :
 
 \begin{itemize}
 \item Dans le cas ou on a plus de révisions ( i.e modification ) du wiki 
-que de pages, on va procéder en récupérant la dernière mise à jour de chaque
-page. C'est la méthode présente nativement sur \textit{Git-MediaWiki}. Celle
-ci peut poser des problèmes dans le cas d'un wiki avec beaucoup de pages et
-peu actif.\\
+  que de pages, on va procéder en récupérant la dernière mise à jour de chaque
+  page. C'est la méthode présente nativement sur \textit{Git-MediaWiki}. Celle
+  ci peut poser des problèmes dans le cas d'un wiki avec beaucoup de pages et
+  peu actif.\\
 \item L'autre possibilité est d'avoir moins de révision que de pages dans le
-wiki. Dans ce cas, la bonne méthode est non plus de regarder page par page,
-mais de consulter la liste des révisions et de ne récupérer que la plus récente
-pour chacune des page. Cette méthode est, au contraire de la précédente, très
-efficace pour des wiki peu actifs, mais va peiner sur des wiki plus ``gros". 
+  wiki. Dans ce cas, la bonne méthode est non plus de regarder page par page,
+  mais de consulter la liste des révisions et de ne récupérer que la plus récente
+  pour chacune des page. Cette méthode est, au contraire de la précédente, très
+  efficace pour des wiki peu actifs, mais va peiner sur des wiki plus ``gros". 
 \end{itemize}
 
 \section{La communautée \textit{Git}}
@@ -389,9 +389,9 @@ fonctionnement, tant en terme de travail que de cohésion~:
 \item petit-déjeuner d'équipe~;
 \item utilisation systématique des post-it~;
 \item programmation par paire et relecture de code obligatoire.
-
-Ces quelques règles nous ont permis de gagner significativement en
-efficacité lors du deuxième sprint.
+\end{itemize}
+  Ces quelques règles nous ont permis de gagner significativement en
+  efficacité lors du deuxième sprint.
 
 \subsection{Deuxième sprint~: mardi 29 mai $\rightarrow$ mardi 5 juin}
 
@@ -436,15 +436,50 @@ qui a empêché un bon fonctionnement de la communication de groupe. Mais ces
 problèmes ont gardé un impact réduit sur le fonctionnement de l'équipe. 
 
 Au final, les bilans de fin de sprint on permit de mettre à plat les problèmes
-et de leur trouver une solution convenant à l'ensemble du groupe. 
+et de leur trouver une solution convenant à l'ensemble du groupe.
+
+On notera également que la pratique des méthodes agiles a été apréciée par 
+l'ensemble du groupe, que ce soit ceux qui en avaient utilisé au projet GL,
+ou ceux qui pour qui c'était nouveaux. le Scrumboard aura été un élément de 
+référence tout au long du développement, servant de point de repère sur 
+l'avancement des tâches.
 
 \subsubsection*{Le logiciel libre }
 
+Après une première approche du logiciel libre, l'équipe ressort de cette 
+expérience avec un mélange de satisfaction et de frustration.
+
+Satisfaction tout d'abord car ce premier contact nous a montré tous les 
+avantages qu'apporte ce système, notamment grâce à la mailling-list qui 
+permet de se lancer dans du code et garantit de bénéficier d'une revue de
+qualité. Malgrès tout, on retiendra que l'accès à la mailling-list peut 
+s'avérer compliquée au profane.
+
+Frustration devant un travail laissé partiellement inachevé, mais surtout
+devant le peut d'intéré porté par la communauté à nos travaux. Le peu de
+diversité parmis nos relecteurs nous a parfois poussé à nous demandé si
+notre projet valait vraiment le coup. 
+
+Au final cette expérience nous aura permit de découvrir à la fois les bon
+et les mauvais côté du logiciel libre.
+
+
 \subsection*{Au niveau des enseignants}
 
-L'ensemble de l'équipe s'accorde à dire que l'enseignant de référence ( Matthieu Moy ) a été d'une qualité exemplaire tout au long du projet. Disponible, réactif sur les questions par mail et présent dans la salle. Il aura été d'une grande aide grace à sa connaissance des l'environnement du projet, c'est à dire la communauté Git et ses coutumes, le logiciel libre dans un sens plus général, mais également dans sa capacité à nous orienter dans la bonne direction en ce qui concerne l'architecture des fichiers. 
-
-Un autre point très positif du projet aura été l'application des méthodes agiles, qui ont permit à l'équipe de travailler plus sereinement. Les passages régulier de XXXXXX nous ont incité à réfléchir à notre organisation, augmentant notre efficacité au cours du projet. 
+L'ensemble de l'équipe s'accorde à dire que l'enseignant de
+  référence (Matthieu~Moy) a été un très bon encadrant tout au long du
+  projet~: disponible, réactif sur les questions par mail et présent
+  dans la salle. Il aura été d'une grande aide grace à sa connaissance
+  des l'environnement du projet, c'est à dire la communauté Git et ses
+  coutumes, le logiciel libre dans un sens plus général, mais
+  également dans sa capacité à nous orienter dans la bonne direction
+  en ce qui concerne l'architecture des fichiers.
+  \\
+  Un autre point très positif du projet aura été l'application des
+  méthodes agiles, qui ont permi à l'équipe de travailler à la fois plus
+  sereinement et plus efficacement. Les passages régulier de
+  Jean-François~Jagodzinski nous ont incité à réfléchir à notre
+  organisation, améliorant notre travail d'équipe tout au long du projet.
 
 \subsection*{Améliorations}
 
