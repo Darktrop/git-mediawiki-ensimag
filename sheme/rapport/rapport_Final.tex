@@ -22,17 +22,17 @@
 \newcommand{\bigpars}[1]{\bigl(#1\bigr)}
 \newcommand{\set}[1]{\left\{#1\right\}}
 \newenvironment{Reponse}[1]{
-\par
-\setlength\fboxrule{2pt}%
-\begin{minipage}{.95\linewidth}
-\fbox{\parbox[c]{.972\linewidth}{\textbf{Propriété} \\ \medskip  #1}} 
-\end{minipage}
+  \par
+  \setlength\fboxrule{2pt}%
+  \begin{minipage}{.95\linewidth}
+    \fbox{\parbox[c]{.972\linewidth}{\textbf{Propriété} \\ \medskip  #1}} 
+  \end{minipage}
 }
 
 
 \newenvironment{Reponse2}[1]{%
-    %\vspace{3pt}
-    \par
+  %\vspace{3pt}
+  \par
   \begin{minipage}{.95\linewidth}
     %\vspace{12pt}\par
     \xdef\@formanswerline{\@questionheader}%
@@ -42,18 +42,18 @@
     %{\@answerstitlefont\@answerstitle}
     \vspace{-2ex}
     \begin{multicols}{5}
-    \begin{list}{\@answernumberfont\Alph{@choice}.~}
+      \begin{list}{\@answernumberfont\Alph{@choice}.~}
     	{\addtolength{\leftmargin}{-3pt}%
-    	%\setlength{\labelsep}{-1pt}
-    	\usecounter{@choice}}}{%
-    \end{list}
+    	  %\setlength{\labelsep}{-1pt}
+    	  \usecounter{@choice}}}{%
+      \end{list}
     \end{multicols}
     \@initorcheck%
     \addtocontents{frm}{\@formanswerline\protect\\\protect\hline}%
     \addtocontents{msk}{\@maskanswerline\protect\\\protect\hline}%
   \end{minipage}
-  }
-  
+}
+
 
 %%%%%%
 % Pour mise-en-forme des fichiers Ada
@@ -61,16 +61,16 @@
 % voir exemple en fin de ce fichier.
 %
 % ATTENTION, requiert encoding utf-8 (voir 2ième "\lstset" ci-dessous)
- 
+
 \usepackage{listings}
 \lstset{
   morekeywords={abort,abs,accept,access,all,and,array,at,begin,body,
-      case,constant,declare,delay,delta,digits,do,else,elsif,end,entry,
-      exception,exit,for,function,generic,goto,if,in,is,limited,loop,
-      mod,new,not,null,of,or,others,out,package,pragma,private,
-      procedure,raise,range,record,rem,renames,return,reverse,select,
-      separate,subtype,task,terminate,then,type,use,when,while,with,
-      xor,abstract,aliased,protected,requeue,tagged,until,public,static,void},
+    case,constant,declare,delay,delta,digits,do,else,elsif,end,entry,
+    exception,exit,for,function,generic,goto,if,in,is,limited,loop,
+    mod,new,not,null,of,or,others,out,package,pragma,private,
+    procedure,raise,range,record,rem,renames,return,reverse,select,
+    separate,subtype,task,terminate,then,type,use,when,while,with,
+    xor,abstract,aliased,protected,requeue,tagged,until,public,static,void},
   sensitive=f,
   morecomment=[l]\#,
   morestring=[d]",
@@ -130,72 +130,155 @@
 
 % titre, auteur et date
 \title{Rapport du projet de spécialité\\
-Passerelle Git-MediaWiki, environement de test\\
-~\\
-\includegraphics[scale=0.75]{logo_ensimag.jpg} 
+  Passerelle Git-MediaWiki, environement de test\\
+  ~\\
+  \includegraphics[scale=0.75]{logo_ensimag.jpg} 
 }
 
 %% penser à indiquer: numéro d'équipe Teide + noms + groupe TD
-\author{Simon Cathébras, Julien Khayat, Simon Perrat, Charles Roussel, Guillaume Sasdy}
+\author{Simon Cathébras, Julien Khayat, Simon Perrat, Charles Roussel,
+  Guillaume Sasdy}
 \date{Le \today}
 \begin{document}
 \maketitle
 
 \section{Travail réalisé}
 
-Le travail réalisé durant ce projet est un environnement de test pour la passerelle \textit{Git-MediaWiki}, un projet développé depuis plusieurs années à l'Ensimag.
+Le travail réalisé durant ce projet est un environnement de test pour
+la passerelle \textit{Git-MediaWiki}, un projet initié l'année
+dernière à l'Ensimag.
 
 \subsection{La passerelle  \textit{Git-MediaWiki}}
 
-Ce projet a pour but de permettre de gérer un MediaWiki a l'aide de Git. Pour mieux comprendre ce projet, nous allons procéder à une explication de ce que sont Git et MediaWiki. 
+Cet outil a pour but de permettre de gérer un MediaWiki a l'aide de
+Git. Pour bien comprendre de quoi il retourne, nous allons expliquer
+précisément ce que sont Git et MediaWiki
 
 \subsubsection{MediaWiki : des sites communautaires à contribution libre}
 
-La meilleure manière de décrire ce qu'est un mediawiki est de prendre un exemple : Wikipédia. Wikipédia est le plus connu des mediawiki, et présente toutes les caractéristiques d'un médiawiki : 
+Le terme wiki désigne un site web dont les pages peuvent être éditées
+par les internautes qui le fréquentent, et MediaWiki est un type de
+wiki particulier. Wikipédia, le wiki le plus fréquenté actuellement,
+fonctionne avec MediaWiki, et on y retrouve toutes ses
+caractéristiques, notamment~:
 
 
 \begin{itemize}
-\item Chacun peut y contribuer de manière libre
-\item Possibilité d'ajouter / supprimer / éditer des pages \\
+\item chacun peut y contribuer de manière libre~;
+\item possibilité d'ajouter, supprimer, et surtout éditer des pages~;
+\item conservation de l'historique complet des modifications.
 \end{itemize}
 
-Le principal défaut de ces sites est que leur édition peut s'avérer fastidieuse, on note quelques problématiques à soulever :
+Le principal défaut de ces sites est que leur édition peut s'avérer
+fastidieuse, et plusieurs problèmes se présentent régulièrement aux
+gros utilisateurs~:
 
 \begin{itemize}
-\item problème avec les éditions concurrentes
-\item la moindre petite modification de pages engendre une entrée dans l'historique.
-\item les pages s'éditent une à la fois, donc si on a une modification récurrente sur plusieurs pages, on se retrouve avec un historique compliqué.
-\item de même une mise à jour importante ( ex : ajout de plusieurs pages sur un projet pour l'Ensiwiki ) on doit ajouter les pages une à une.
-\item lors d'une mise à jour importante nécessitant un long travail sur une page, on se retrouve face à un dileme :
-\begin{itemize}
-\item soit on enregistre régulière et on produit un historique "sale"
-\item soit on enregistre qu'une fois le travail terminé et on s'expose au risque de perte des heure de travail en cas de crash de l'ordinateur, ou de fermeture du navigateur par erreur.
-\end{itemize}
+\item conflits entre éditions concurrentes~;
+\item la moindre petite modification de page, comme une correction
+  orthographique, engendre une entrée dans l'historique~;
+\item une seule révision de page entraîne une révision complète du
+  wiki, l'historique est donc rapidement surchargé~;
+\item ainsi pour une mise à jour importante (par exemple sur Wikipédia, un
+  évènement d'actualité marquant), les pages touchées doivent être
+  révisées une par une~;
+\item de plus, dans le cas d'une modification conséquente sur une
+  page, on est confronté à un dilemme~:
+  \begin{itemize}
+  \item soit on enregistre régulière et on produit un historique "sale"
+  \item soit on n'enregistre qu'une fois le travail terminé, et on
+    s'expose alors au risque de perdre son travail sur une coupure de
+    connexion, un crash, une fermeture accidentelle du navigateur...
+  \end{itemize}
 \end{itemize}
 
-Le but de la passerelle est d'apporter une solution simple à ces problèmes en mettant à jour les mediawiki à l'aide d'un gestionnaire de version : \textit{Git}
+Le but de la passerelle est alors de proposer une solution à ces
+problèmes en permettant d'utiliser le gestionnaire de version
+\textit{Git} pour travailler sur un MediaWiki.
 
 \subsubsection{Git : un gestionnaire de version}
 
-Un gestionnaire de version permet de partager une série de fichiers sur un serveur et de permettre à plusieurs personne de les éditer en concurrence.  En gérant les pages MediaWiki via \textit{Git} on permet à l'utilisateur de résoudre la plupart des problèmes liés aux mediawiki ( cf ci dessus ). L'idée est d'obtenir une copie locale des pages du wiki pour bénéficier des avantages de ce mode de stockage.
+Un gestionnaire de version est un logiciel qui permet de partager et
+synchroniser un ensemble de fichiers entre plusieurs
+utilisateurs. Typiquement, un dépot est créé sur un serveur et toute
+personne qui y a accès peut le copier sur son ordinateur personnel,
+pour ensuite partager ses modifications sur les
+fichiers. \textit{Git}, comme d'autres gestionnaires de version,
+propose en outre les fonctionnalités suivantes~:
 
 \begin{itemize}
-\item les fichiers en local permettent d'éditer un fichier en plusieurs fois et de faire une seule mise en ligne. Un historique plus propre et pas de risque lors de l'édition des pages
-\item On peut facilement faire une grosse mise à jour de plusieurs pages sur le wiki sans problèmes. 
-\item aucun risque de perte de donnée en cours d'édition, la plupart des éditeurs de texte ont un système de sauvegarde automatique.
+\item possibilité d'avoir plusieurs versions d'un même fichier~;
+\item gestion des éditions concurrentes~;
+\item conservation d'un historique complet et détaillé.
+\end{itemize}
+
+On constate alors quelques avantages par rapport à un wiki~:
+
+\begin{itemize}
+\item on peut éditer un fichier en plusieurs fois en faisant une seule
+  mise en ligne, l'historique résultant est alors plus propre~;
+\item faire une mise à jour simultanée de plusieurs fichiers est plus simple~;
+\item aucun risque de perte de donnée en cours d'édition, car la plupart
+  des éditeurs de texte ont un système de sauvegarde automatique.
 \end{itemize}
 
 \subsection{L'environnement de tests}
 
-Le projet \textit{Git-MediaWiki} est actuellement dans le répertoire \textit{contrib/} de la branche master de Git. Pour pouvoir aller plus loin, c'est à dire se retrouver nativement intégré à Git, la passerelle doit se pourvoir d'une base de tests beaucoup plus approfondie que l'actuelle. Jusqu'à aujourd'hui, les tests de \textit{Git-MediaWiki} étaient effectués à la main en vérifiant le contenu des pages Wiki et des fichier dans le dépot Git. 
+L'outil \textit{Git-MediaWiki} est actuellement intégré à \textit{Git}
+comme une contribution, sans être présent dans son coeur de
+commandes. Pour pouvoir aller plus loin et intégrer nativement la
+passerelle dans \textit{Git}, elle doit être munie d'une base de test
+conséquente pour valider son fonctionnement. Jusqu'à présent, les
+tests devaient être effectués à la main.
 
-L'objectif de notre groupe est de construire un environnement complet de tests pour la passerelle, avec pour objectif, à terme, de permettre l'avancée de \textit{Git-MediaWiki} hors du répertoire contrib. Le principe est d'avoir toute une batterie de tests s'exécutant automatiquement et validant les fonctionnalités déjà développées, ou indiquant que des fonctionnalitées ne le sont toujours pas.
+L'objectif de notre groupe est de construire un environnement complet
+de tests pour la passerelle, avec pour objectif, à court terme de
+valider les fonctionnalités existantes et d'en développer de
+nouvelles, à long terme de pousser \textit{Git-MediaWiki} jusque
+dans coeur de \textit{Git}.
 
 \section{La communautée \textit{Git}}
 
+\textit{Git} est un logiciel libre et open source, ce qui signifie que
+tout le monde a accès à son code source et peut y contribuer en
+proposant des modifications. Il existe alors une communauté de
+développeurs contribuant à \textit{Git}, qui communiquent ensemble via
+une mailing-list dédiée et échangent ainsi sur les bugs rencontrés et
+leur correction, les ajouts de fonctionnalités et les mises à jour du
+code de manière générale. La version officielle est maintenue par
+Junio~C.~Hamano, qui se charge de vérifier que les patches proposés
+ont un niveau de finition suffisant pour être intégrés, en plus d'être
+lui-même un des contributeurs principaux au code source de \textit{Git}.
+
 \subsection{Organisation}
 
-\subsection{Intéractions avec la communautée}
+Le code de \textit{Git} est disponible librement sur une archive
+\textit{Git}. Cette archive comprend trois branches, qui correspondent
+chacune à différents avancements des patches proposés. La principale,
+\textit{master}, est celle qui correspond à la version officielle
+distribuée. La branche \textit{next} contient les patches qui seront
+ajoutés à la prochaine version officielle. Enfin, la branche
+\textit{pu}, pour \textit{proposed updates}, comprend les patches qui
+sont en voie d'intégration à \textit{Git}, mais qui ont encore besoin
+de peaufinage pour passer dans \textit{next}. Il faut noter qu'avant
+même qu'un patch puisse passer dans cette branche, il doit déjà être
+relu, testé et approuvé par la communauté sur la mailing-list.
+
+\subsection{Interactions avec la communautée}
+
+Nos échanges avec la communauté se font via la mailing-list de
+\textit{Git}. Nos propositions de patches se font en plusieurs temps~:
+tout d'abord, nous envoyons sur cette liste de diffusion une `cover
+letter`, soit un mail où nous présentons notre équipe et notre
+projet. Lorsque nos premiers travaux nous semblent assez mûrs, nous
+envoyons alors un série de patches sur la mailing list, que la
+communauté peut alors relire et commenter. Nous tenons alors compte
+des critiques émises pour corriger notre code, et envoyons une
+nouvelle série de patches. Nous continuons ainsi jusqu'à obtenir un
+code qui atteigne les critères d'acceptation par \textit{Git}, et qui
+soit en mesure d'être ajouté à la branche \textit{pu}.
+Actuellement, nous n'avons pas atteint cette branche mais avons bon
+espoir d'y parvenir.
 
 \section{Difficultées pendant le projet}
 
